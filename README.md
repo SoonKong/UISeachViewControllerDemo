@@ -72,6 +72,12 @@ self.tableView.tableHeaderView = _searchViewCtrl.searchBar;
 
 ##### 1、如果搜索结果详情页是需要隐藏导航条的；而这样进来的话，导航栏是显示的
 
+
+
+![如图](https://github.com/SoonKong/UISeachViewControllerDemo/blob/master/UNADJUSTEDNONRAW_thumb_44.jpg)
+
+
+
 解决办法：
 
 * 在进入搜索结果详情页前，将 hidesNavigationBarDuringPresentation 设置为NO
@@ -110,6 +116,8 @@ _searchViewCtrl.hidesNavigationBarDuringPresentation = NO;
 
 ##### 2、以为这样就解决了？不，返回的时候，取消搜索后，搜索框不见了；整个界面都不好了
 
+![如图](https://github.com/SoonKong/UISeachViewControllerDemo/blob/master/UNADJUSTEDNONRAW_thumb_42.jpg)
+
 * 解决办法：  原本 hidesNavigationBarDuringPresentation 设置为NO后，回到首页搜索时，没有设置回来，所以在首页（HomeViewController），viewWillAppear里，设置回YES
 
 ```objective-c
@@ -126,6 +134,10 @@ _searchViewCtrl.hidesNavigationBarDuringPresentation = NO;
 
 
 ##### 3、以为这样就解决了？不，这还不完美。从搜索结果详情页返回的时候，可以非常清晰的看到，动画pop回来时，顶部多出一个导航
+
+
+
+![如图](https://github.com/SoonKong/UISeachViewControllerDemo/blob/master/UNADJUSTEDNONRAW_thumb_43.jpg)
 
 
 
